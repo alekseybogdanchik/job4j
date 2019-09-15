@@ -2,7 +2,9 @@ package ru.job4j.array;
 
 public class MatrixCheck {
     public static boolean isWin(char[][] board) {
-        boolean result = true;
+        boolean result = false;
+        int count = 0;
+        int count2 = 0;
         for (int row = 0; row < board.length; row++) {
             for (int cell = 0; cell < board.length; cell++) {
                 char sign = board[row][cell];
@@ -11,40 +13,30 @@ public class MatrixCheck {
             }
             System.out.println();
         }
-        for (int h = 0; h < board.length; h++) {
-            if (result == true) {
-                for (int v = 1; v < board.length; v++) {
-                    if (board[h][0] == board[h][v]) {
-                        result = true;
-                    } else {
-                        result = false;
-                        break;
-                    }
-                }
-            } else {
-                break;
-            }
-        }
-        boolean cycle2 = true;
 
-        if (result == false) {
-            for (int v = 0; v < board.length; v++) {
-                if (cycle2 == true) {
-                    for (int h = 1; h < board.length; h++) {
-                        if (board[0][v] == board[h][v]) {
-                            result = true;
-                            cycle2 = true;
-                        } else {
-                            result = false;
-                            cycle2 = false;
-                            break;
-                        }
+        for (int row = 0; row < board.length; row++) {
+            if (board[row][row] == 'X') {
+                for (int cell = 0; cell < board.length; cell++) {
+
+                    if (board[row][cell] == 'X') {
+                        count++;
                     }
-                } else {
-                    break;
+
+                    if (board[cell][row] == 'X') {
+                        count2++;
+                    }
                 }
             }
         }
+
+        if (count == 5) {
+            result = true;
+        } else if (count2 == 5) {
+            result = true;
+        } else {
+            result = false;
+        }
+
         return result;
     }
 

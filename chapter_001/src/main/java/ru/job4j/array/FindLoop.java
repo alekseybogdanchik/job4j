@@ -31,13 +31,12 @@ public class FindLoop {
 
         for (int i = 0; i < (data.length-1); i++) {
 
-            int min = data[i];
 
-            for (int index = i + 1; index < data.length; index++) {
-                min = min < data[index] ? min : data[index];
-            }
 
-            int indexMin = find.indexOf(data, min, i, (data.length - 1));
+            int min = MinDiapason.findMin(data, i, data.length);
+
+
+            int indexMin = find.indexOf(data, min, i, data.length);
             int temp = data[i];
             data[i] = data[indexMin];
             data[indexMin] = temp;
