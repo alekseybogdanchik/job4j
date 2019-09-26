@@ -2,20 +2,20 @@ package ru.job4j.converter;
 
 public class Converter {
 
-    public static int rubleToEuro (int value){
-        return value/70;
+    public static int rubleToEuro(int value) {
+        return value / 70;
     }
 
-    public static int rubleToDollar (int value){
-        return value/60;
+    public static int rubleToDollar(int value) {
+        return value / 60;
     }
 
-    public static int euroToRuble (int value){
-        return value*70;
+    public static int euroToRuble(int value) {
+        return value * 70;
     }
 
-    public static int dollarToRuble (int value){
-        return value*60;
+    public static int dollarToRuble(int value) {
+        return value * 60;
     }
 
     public static void main(String[] args) {
@@ -35,20 +35,20 @@ public class Converter {
         boolean passed2 = dollarExpected == dollarOut;
         System.out.println("Test. 180 rubles are 3 dollars. Test result: " + passed2);
 
-        int Eruble = euroToRuble(560);
-        System.out.println("560 euro are " + Eruble + " rubles.");
-        int ErubleIn = 560;
-        int ErubleExpected = 39200;
-        int ErubleOut = euroToRuble(ErubleIn);
-        boolean passed3 = ErubleExpected == ErubleOut;
+        int eRuble = euroToRuble(560);
+        System.out.println("560 euro are " + eRuble + " rubles.");
+        int erubleIn = 560;
+        int erubleExpected = 39200;
+        int erubleOut = euroToRuble(erubleIn);
+        boolean passed3 = erubleExpected == erubleOut;
         System.out.println("Test. 560 euro are 39200 rubles. Test result: " + passed3);
 
-        int Druble = dollarToRuble(500);
-        System.out.println("500 dollars are " + Druble + " rubles.");
-        int DrubleIn = 500;
-        int DrubleExpected = 30000;
-        int DrubleOut = dollarToRuble(DrubleIn);
-        boolean passed4 = DrubleExpected == DrubleOut;
+        int dolRuble = dollarToRuble(500);
+        System.out.println("500 dollars are " + dolRuble + " rubles.");
+        int dolRubleIn = 500;
+        int dolRubleExpected = 30000;
+        int dolRubleOut = dollarToRuble(dolRubleIn);
+        boolean passed4 = dolRubleExpected == dolRubleOut;
         System.out.println("Test. 500 dollars are 30000 rubles. Test result: " + passed4);
     }
 

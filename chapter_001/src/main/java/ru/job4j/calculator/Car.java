@@ -8,16 +8,16 @@ public class Car {
         this.volume = this.volume - kilometer;
     }
 
-    public void fill(int gas){
-        this.volume = this.volume + 10*gas;
+    public void fill(int gas) {
+        this.volume = this.volume + 10 * gas;
     }
 
-    public boolean canDrive(){
-        boolean result = this.volume>0;
+    public boolean canDrive() {
+        boolean result = this.volume > 0;
         return result;
     }
 
-    public void gasinfo(){
-        System.out.println("I can drive "+this.volume);
+    public void gasinfo() {
+        System.out.println("I can drive " + this.volume);
     }
 }

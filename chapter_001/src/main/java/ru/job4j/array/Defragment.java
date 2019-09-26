@@ -9,11 +9,11 @@ public class Defragment {
                 // Здесь нужен цикл while
                 int indexTemp = index;
                 int indexFilled = index;
-                String FilledCell = null;
+                String filledCell = null;
 
-                while (FilledCell == null && indexFilled < array.length-1) {
+                while (filledCell == null && indexFilled < array.length - 1) {
                     indexFilled++;
-                    FilledCell = array[indexFilled];
+                    filledCell = array[indexFilled];
                 }
 
                 array[indexTemp] = array [indexFilled];

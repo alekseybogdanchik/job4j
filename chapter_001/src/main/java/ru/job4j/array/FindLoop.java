@@ -1,7 +1,7 @@
 package ru.job4j.array;
 
 public class FindLoop {
-    public int indexOf (int[] data, int el) {
+    public int indexOf(int[] data, int el) {
         int rst = -1; // если элемента нет в массиве, то возвращаем -1.
 
         for (int index = 0; index != data.length; index++) {
@@ -13,7 +13,7 @@ public class FindLoop {
         return rst;
     }
 
-    public int indexOf (int[] data, int el, int start, int finish) {
+    public int indexOf(int[] data, int el, int start, int finish) {
         int rst = -1; // если элемента нет в массиве, то возвращаем -1.
 
         for (int index = start; index <= finish; index++) {
@@ -29,7 +29,7 @@ public class FindLoop {
 
         FindLoop find = new FindLoop();
 
-        for (int i = 0; i < (data.length-1); i++) {
+        for (int i = 0; i < (data.length - 1); i++) {
 
 
 
