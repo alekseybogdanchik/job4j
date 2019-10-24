@@ -15,7 +15,7 @@ public class FitTest {
     }
 
     @Test
-    public void WomanWeight() {
+    public void womanWeight() {
         int in = 165;
         int expected = 63;
         int out = (int) Fit.womanWeight(in);
