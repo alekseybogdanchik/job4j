@@ -6,7 +6,6 @@ public class Square {
         for (int index = 0; index != bound; index++) {
             rst[index] = (int) Math.pow((index + 1), 2);
         }
-
         return rst;
     }
 }

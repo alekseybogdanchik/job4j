@@ -12,6 +12,7 @@ public class CarUsage {
         }
         System.out.println("Start engine... trum, trum..." + enginesound);
         System.out.println("i need to add gasoline!");
+
         int gas = 30;
         audi.fill(gas);
         driving = audi.canDrive();
@@ -26,7 +27,5 @@ public class CarUsage {
         int distance = 50;
         audi.drive(distance);
         audi.gasinfo();
-
-
     }
 }

@@ -9,7 +9,6 @@ public class MatrixCheck {
         for (int row = 0; row < board.length; row++) {
             if (board[row][row] == 'X') {
                 for (int cell = 0; cell < board.length; cell++) {
-
                     if (board[row][cell] == 'X') {
                         count++;
                     }
@@ -17,7 +16,6 @@ public class MatrixCheck {
                         count2++;
                     }
                 }
-
                 if (count == board.length) {
                     result = true;
                     break;

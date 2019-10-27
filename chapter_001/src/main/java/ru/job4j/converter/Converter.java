@@ -51,5 +51,4 @@ public class Converter {
         boolean passed4 = dolRubleExpected == dolRubleOut;
         System.out.println("Test. 500 dollars are 30000 rubles. Test result: " + passed4);
     }
-
 }

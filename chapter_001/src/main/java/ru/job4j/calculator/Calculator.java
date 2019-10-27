@@ -16,6 +16,7 @@ public class Calculator {
         double result = first + second;
         System.out.println(first + " + " + second + " = " + result);
     }
+
     /**
      * Деление аргументов и вывод строки с выполняемым действием
      * @param first первый аргумент
@@ -50,7 +51,6 @@ public class Calculator {
      * Вызывает методы и передает аргументы
      * @param args
      */
-
         public static void main(String[] args) {
         add(1, 1);
         div(4, 2);

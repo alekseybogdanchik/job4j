@@ -10,15 +10,12 @@ public class Defragment {
                 int indexTemp = index;
                 int indexFilled = index;
                 String filledCell = null;
-
                 while (filledCell == null && indexFilled < array.length - 1) {
                     indexFilled++;
                     filledCell = array[indexFilled];
                 }
-
                 array[indexTemp] = array [indexFilled];
                 array [indexFilled] = null;
-
             }
             System.out.print(array[index] + " ");
         }
