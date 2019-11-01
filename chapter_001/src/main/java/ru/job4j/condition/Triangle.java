@@ -1,6 +1,16 @@
 package ru.job4j.condition;
 
 public class Triangle {
+    private Point first;
+    private Point second;
+    private Point third;
+
+    public Triangle(Point ap, Point bp, Point cp) {
+        this.first = ap;
+        this.second = bp;
+        this.third = cp;
+    }
+
     /**
      * Метод вычисления полупериметра по длинам сторон.
      *
@@ -11,7 +21,7 @@ public class Triangle {
      * @param a расстояние между точками a b
      * @param b расстояние между точками a c
      * @param c расстояние между точками b c
-     * @return полуперимента.
+     * @return полупериметра.
      */
     public double period(double a, double b, double c) {
         return (a + b + c) / 2;
@@ -28,7 +38,7 @@ public class Triangle {
      * @return
      */
     private boolean exist(double a, double c, double b) {
-        return a > 0 && b > 0 && c > 0 && a + b > c && a + c > b && b + c > a;
+        return a + b > c && a + c > b && b + c > a;
     }
 
     /**
@@ -42,11 +52,11 @@ public class Triangle {
      *
      * @return Вернуть площадь, если треугольник существует или -1.
      */
-    public double area(int x1, int y1, int x2, int y2, int x3, int y3) {
+    public double area(Triangle triangle) {
         double rsl = -1;
-        double a = new Point().distance(x1, y1, x2, y2);
-        double b = new Point().distance(x2, y2, x3, y3);
-        double c = new Point().distance(x1, y1, x3, y3);
+        double a = first.distance(second);
+        double b = first.distance(third);
+        double c = second.distance(third);
         double p = period(a, b, c);
 
         if (this.exist(a, b, c)) {
