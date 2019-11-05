@@ -2,9 +2,10 @@ package ru.job4j.nasledovanie;
 
 public class Animal {
 
-	public String name;
+	private String name;
 
 	public Animal(String name) {
+		this.name = name;
 		System.out.println("Animal");
 	}
 }
