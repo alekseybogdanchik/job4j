@@ -30,7 +30,7 @@ public class Library {
 		System.out.println("Show books named \"Clean code\"");
 		for (int i = 0; i < books.length; i++) {
 			Book bkPrnt = books[i];
-			if (bkPrnt.name == "Clean code") {
+			if (bkPrnt.name.equals("Clean code")) {
 				System.out.println("In the book " + bkPrnt.getName() + " are " + bkPrnt.getPages() + " pages");
 			}
 		}
