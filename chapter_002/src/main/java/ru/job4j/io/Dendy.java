@@ -1,0 +1,30 @@
+package ru.job4j.io;
+
+import java.util.Scanner;
+
+public class Dendy {
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		boolean run = true;
+		System.out.println("Денди - денди, мы все любим денди, в денди играют все!");
+		while (run) {
+			System.out.println("Меню:");
+			System.out.println("1. Танчики");
+			System.out.println("2. Супер Марио");
+			System.out.println("3. Выход");
+			System.out.print("Введите пункт меню, чтобы начать игру: ");
+			int select = Integer.valueOf(input.nextLine());
+			if (select == 3) {
+				System.out.println("Игра завершена.");
+				run = false;
+			} else if (select == 1) {
+				System.out.println("Танчики загружаются ...");
+			} else if (select == 2) {
+				System.out.println("Супер Марио загружается ...");
+			} else {
+				System.out.println("Такого пункта нет, введите число от 1 до 3");
+			}
+			System.out.println();
+		}
+	}
+}
