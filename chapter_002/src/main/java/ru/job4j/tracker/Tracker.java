@@ -24,7 +24,7 @@ public class Tracker {
 		boolean rsl = false;
 		for (int i = 0; i < items.length; i++) {
 			if (items[i] != null) {
-				if (id.equals(item.getId())) {
+				if (id.equals(items[i].getId())) {
 					items[i] = item;
 					items[i].setId(id);
 					rsl = true;
