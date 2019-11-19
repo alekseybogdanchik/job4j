@@ -5,8 +5,8 @@ public class HierarchyUsage {
         Car car = new Car();
         Transport tr = car;
         Object obj = car;
-        Object oСar = new Car();
-        Car carFromObject = (Car) oСar;
+        Object objCar = new Car();
+        Car carFromObject = (Car) objCar;
 
         Object bicycle = new Bicycle();
         //Car cb = (Car) bicycle;
