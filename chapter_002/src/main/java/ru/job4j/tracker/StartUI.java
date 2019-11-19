@@ -13,9 +13,13 @@ public class StartUI {
     public static void showAllItems(Tracker tracker) {
         System.out.println("=== Show all items ===");
         Item[] allItems = tracker.findAll();
-        for (Item i
-                : allItems) {
-            System.out.println("Name: " + i.getName() + ", id: " + i.getId());
+        if (allItems.length == 0) {
+            System.out.println("-- Tracker have no items --");
+        } else {
+            for (Item i
+                    : allItems) {
+                System.out.println("Name: " + i.getName() + ", id: " + i.getId());
+            }
         }
     }
 
