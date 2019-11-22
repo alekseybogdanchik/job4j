@@ -6,13 +6,12 @@ public class StartUI {
         boolean run = true;
         while (run) {
             this.showMenu(actions);
-            //System.out.print("Select: ");
             int select = input.askInt("Select: ");
             if (select >= 0 && select <= 6) {
                 UserAction action = actions[select];
                 run = action.execute(input, tracker);
             } else {
-                System.out.println("-- Enter a number between 0 and 6 --");
+                System.out.println("-- Enter a number between 0 and " + actions.length + " --");
             }
         }
     }
