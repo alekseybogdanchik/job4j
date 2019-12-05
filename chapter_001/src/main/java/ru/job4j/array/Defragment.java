@@ -14,8 +14,8 @@ public class Defragment {
                     indexFilled++;
                     filledCell = array[indexFilled];
                 }
-                array[indexTemp] = array [indexFilled];
-                array [indexFilled] = null;
+                array[indexTemp] = array[indexFilled];
+                array[indexFilled] = null;
             }
             System.out.print(array[index] + " ");
         }
