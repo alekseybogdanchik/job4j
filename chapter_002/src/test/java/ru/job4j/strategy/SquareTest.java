@@ -1,27 +1,26 @@
-package strategy;
+package ru.job4j.strategy;
 
 import org.junit.Test;
-
-import ru.job4j.strategy.Triangle;
+import ru.job4j.strategy.Square;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
-public class TriangleTest {
+public class SquareTest {
     @Test
     public void whenDrawSquare() {
-        Triangle triangle = new Triangle();
+        Square square = new Square();
         assertThat(
-                triangle.draw(),
+                square.draw(),
                 is(
                         new StringBuilder()
-                            .append("   +  ")
+                            .append("[][][][]")
                             .append(System.lineSeparator())
-                            .append("  + +  ")
+                            .append("[]    []")
                             .append(System.lineSeparator())
-                            .append(" +   + ")
+                            .append("[]    []")
                             .append(System.lineSeparator())
-                            .append("+++++++")
+                            .append("[][][][]")
                             .toString()
                 )
         );
