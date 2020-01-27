@@ -1,6 +1,9 @@
 package ru.job4j.tracker;
 
 import org.junit.Test;
+
+import java.util.ArrayList;
+
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
@@ -38,12 +41,13 @@ public class TrackerTest {
 		Item first = new Item("test1");
 		Item second = new Item("test2");
 		Item third = new Item("test3");
-		Item fourth = new Item("test4");
 		tracker.add(first);
 		tracker.add(second);
 		tracker.add(third);
 		tracker.delete(second.getId());
-		Item[] expected = {first, third};
+		ArrayList<Item> expected = new ArrayList<Item>();
+        expected.add(first);
+        expected.add(third);
 		assertThat(tracker.findAll(), is(expected));
 	}
 
@@ -56,12 +60,14 @@ public class TrackerTest {
 		tracker.add(first);
 		tracker.add(second);
 		tracker.add(third);
-		Item[] expected = {first, second};
+        ArrayList<Item> expected = new ArrayList<Item>();
+        expected.add(first);
+        expected.add(second);
 		assertThat(tracker.findByName(first.getName()), is(expected));
 	}
 
 	@Test
-	public void whenFindAll1234ThenReturn1234() {
+	public void whenFindAll1234Delete3ThenReturn124() {
 		Tracker tracker = new Tracker();
 		Item first = new Item("test1");
 		Item second = new Item("test2");
@@ -72,7 +78,10 @@ public class TrackerTest {
 		tracker.add(third);
 		tracker.add(fourth);
 		tracker.delete(third.getId());
-		Item[] expected = {first, second, fourth};
+        ArrayList<Item> expected = new ArrayList<Item>();
+        expected.add(first);
+        expected.add(second);
+        expected.add(fourth);
 		assertThat(tracker.findAll(), is(expected));
 	}
 }
