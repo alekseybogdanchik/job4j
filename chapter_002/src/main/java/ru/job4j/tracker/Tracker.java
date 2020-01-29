@@ -1,16 +1,14 @@
 package ru.job4j.tracker;
 
-import ru.job4j.pojo.Product;
-
 import java.util.ArrayList;
-import java.util.Objects;
+import java.util.List;
 import java.util.Random;
 
 public class Tracker {
 
     //private final Item[] items = new Item[100];
     //private int position = 0;
-    private final ArrayList<Item> items = new ArrayList<Item>();
+    private final List<Item> items = new ArrayList<Item>();
 
     public Item add(Item item) {
         item.setId(this.generatedId());
@@ -25,12 +23,10 @@ public class Tracker {
 
     public boolean replace(String id, Item item) {
         boolean rsl = false;
-        for (Item i : items) {
-            if (id.equals(i.getId())) {
-                int index = items.indexOf(i);
-                items.remove(index);
-                items.add(index, item);
-                items.get(index).setId(id);
+        for (int i = 0; i < items.size(); i++) {
+            if (id.equals(items.get(i).getId())) {
+                items.set(i, item);
+                items.get(i).setId(id);
                 rsl = true;
             }
         }
@@ -39,8 +35,8 @@ public class Tracker {
 
     public boolean delete(String id) {
         boolean rsl = false;
-        for (Item i : items) {
-            if (id.equals(i.getId())) {
+        for (int i = 0; i < items.size(); i++) {
+            if (id.equals(items.get(i).getId())) {
                 items.remove(i);
                 rsl = true;
                 break;
@@ -49,7 +45,7 @@ public class Tracker {
         return rsl;
     }
 
-    public ArrayList<Item> findAll() {
+    public List<Item> findAll() {
         return this.items;
     }
 
