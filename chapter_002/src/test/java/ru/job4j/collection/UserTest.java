@@ -41,7 +41,7 @@ public class UserTest {
     }
 
     @Test
-    public void UserSortDecrByAge() {
+    public void userSortDecrByAge() {
         User ivan = new User("Ivan", 28);
         User petr = new User("Petr", 32);
         User aleksey = new User("Aleksey", 35);
@@ -57,7 +57,7 @@ public class UserTest {
     }
 
     @Test
-    public void UserSortDecrByName() {
+    public void userSortDecrByName() {
         User ivan = new User("Ivan", 28);
         User petr = new User("Petr", 32);
         User aleksey = new User("Aleksey", 35);
