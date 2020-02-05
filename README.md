@@ -1,9 +1,5 @@
-﻿# job4j
+﻿[![Build Status](https://travis-ci.org/alekseybogdanchik/job4j.svg?branch=master)](https://travis-ci.org/alekseybogdanchik/job4j)
+[![codecov](https://codecov.io/gh/alekseybogdanchik/job4j/branch/master/graph/badge.svg)](https://codecov.io/gh/alekseybogdanchik/job4j)
 
-я начал курс job4j в 2019 году. Планирую закончить курс в ферале 2020 года.
-
-Объединение зафиксированных изменений
-
-В курсе производилась работа с веткамы git.
-
-Создание ветки из IDEA.
+# job4j
+Начальный проект для курса Junior

@@ -12,11 +12,12 @@ public class StringCompare implements Comparator<String> {
             if (rsl != 0) {
                 break;
             }
-            if (index == minLength - 1
-                && left.length() != right.length()) {
-                    rsl = left.length() > right.length() ? +1 : -1;
-            }
         }
+        if (rsl == 0
+            && left.length() != right.length()) {
+            rsl = left.length() - right.length();
+        }
+        System.out.println(rsl);
         return rsl;
     }
 }

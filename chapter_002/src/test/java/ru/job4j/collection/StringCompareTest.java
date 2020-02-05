@@ -77,4 +77,14 @@ public class StringCompareTest {
         );
         assertThat(rst, greaterThan(0));
     }
+
+    @Test
+    public void leftLessThanRightFor2CharsThenMinus2() {
+        StringCompare compare = new StringCompare();
+        int rst = compare.compare(
+                "a",
+                "aaa"
+        );
+        assertThat(rst, is(-2));
+    }
 }
