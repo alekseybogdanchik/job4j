@@ -25,4 +25,20 @@ public class DepDescCompTest {
         );
         assertThat(rsl, lessThan(0));
     }
+    @Test
+    public void compare3() {
+        int rsl = new DepDescComp().compare(
+                "K1/SK1",
+                "K1/SK1/SSK1"
+        );
+        assertThat(rsl, lessThan(0));
+    }
+    @Test
+    public void compare4() {
+        int rsl = new DepDescComp().compare(
+                "K2",
+                "K1/SK1/SSK1"
+        );
+        assertThat(rsl, lessThan(0));
+    }
 }
