@@ -4,33 +4,29 @@ package ru.job4j.exercises;
 import java.util.*;
 
 public class StarsToHotels {
-    private List<Hotel> hotels = new ArrayList<Hotel>();
-
     public List<Integer> addStars(List<Integer> ratingList, int n) {
-        for (int index = 1; index <= ratingList.size(); index++) {
-            hotels.add(new Hotel(index, ratingList.get(index - 1)));
+        TreeSet<Integer> set = new TreeSet<>(ratingList);
+
+        for (Integer h : set) {
+            System.out.print(h);
         }
-        Collections.sort(hotels, new HotelsAscByRating());
-        int starsNums = n / 5;
-        Hotel[][] setStars = new Hotel[5][starsNums];
-        int sortedHotel = 0;
-        for (int i = 0; i < setStars.length; i++) {
-            for (int j = 0; j < starsNums; j++) {
-                hotels.get(sortedHotel).setStars(i + 1);
-                sortedHotel++;
-            }
+        System.out.println();
+
+        int[] table = new int[101];
+        int delta = n / 5;
+        int rate = delta;
+        for (Integer i : set) {
+            table[i] = rate / delta;
+            rate++;
+            System.out.print(table[i]);
         }
-        Comparator<Hotel> cmpNum = new Comparator<Hotel>() {
-            @Override
-            public int compare(Hotel left, Hotel right) {
-                return left.getNumber() - right.getNumber();
-            }
-        };
-        Collections.sort(hotels, cmpNum);
-        List<Integer> starsList = new ArrayList<Integer>();
-        for (Hotel hotel : hotels) {
-            starsList.add(hotel.getStars());
+        System.out.println();
+
+        List<Integer> out = new ArrayList<>(ratingList.size());
+        for (Integer i : ratingList) {
+            System.out.print(i);
+            out.add(table[i]);
         }
-    return starsList;
+        return out;
     }
 }
