@@ -1,9 +1,6 @@
 package ru.job4j.bank;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class BankService {
     private Map<User, List<Account>> users = new HashMap<>();
@@ -16,8 +13,7 @@ public class BankService {
         User user = findByPassport(passport);
         if (user != null) {
             List<Account> currentAccounts = users.get(user);
-            boolean alreadyHave = currentAccounts.contains(account);
-            if (!alreadyHave) {
+            if (!currentAccounts.contains(account)) {
                 currentAccounts.add(account);
             }
         }
@@ -25,28 +21,27 @@ public class BankService {
 
     public User findByPassport(String passport) {
         User rsl = null;
-        for (User user : users.keySet()) {
-            if (passport.equals(user.getPassport())) {
-                rsl = user;
-                break;
-            }
+        Optional<User> findByPass = users.keySet().stream().
+                filter(user -> user.getPassport().equals(passport)).
+                findFirst();
+        if (findByPass.isPresent()) {
+            rsl = findByPass.get();
         }
         return rsl;
     }
 
     public Account findByRequisite(String passport, String requisite) {
-        Account find = null;
         User user = findByPassport(passport);
+        Account rsl = null;
         if (user != null) {
-            List<Account> currentAccounts = users.get(user);
-            for (Account account : currentAccounts) {
-                if (account.getRequisite().equals(requisite)) {
-                    find = account;
-                    break;
-                }
+            Optional<Account> find = users.get(user).stream().
+                    filter(account -> account.getRequisite().equals(requisite)).
+                    findFirst();
+            if (find.isPresent()) {
+                rsl = find.get();
             }
         }
-        return find;
+        return rsl;
     }
 
     public boolean transferMoney(String srcPassport, String srcRequisite,

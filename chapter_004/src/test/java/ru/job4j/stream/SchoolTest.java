@@ -2,24 +2,22 @@ package ru.job4j.stream;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
 public class SchoolTest {
     List<Student> students = List.of(
-            new Student(100),
-            new Student(25),
-            new Student(55),
-            new Student(45),
-            new Student(85),
-            new Student(50),
-            new Student(69),
-            new Student(70),
-            new Student(1)
+            new Student("Ivanov", 100),
+            new Student("Petrov", 25),
+            new Student("Sidorov", 55),
+            new Student("Antonov", 45),
+            new Student("Galkin", 85),
+            new Student("Nikolaev", 50),
+            new Student("Pushkin", 69),
+            new Student("Andreev", 70),
+            new Student("Shishkin", 1)
     );
 
     @Test
@@ -55,6 +53,19 @@ public class SchoolTest {
         for (Student s : toCClass) {
              result.add(s.getScore());
         }
+        assertThat(expected, is(result));
+    }
+
+    @Test
+    public void toMap() {
+        School school = new School();
+        Student ivanov = new Student("Ivanov", 100);
+        Student petrov = new Student("Petrov", 25);
+        List<Student> students = List.of(ivanov, petrov);
+        Map<String, Student> result = school.listToMap(students);
+        Map<String, Student> expected = new HashMap<>();
+        expected.put(ivanov.getSurname(), ivanov);
+        expected.put(petrov.getSurname(), petrov);
         assertThat(expected, is(result));
     }
 }
