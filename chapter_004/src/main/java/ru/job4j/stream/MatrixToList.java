@@ -7,10 +7,10 @@ import java.util.stream.Stream;
 
 public class MatrixToList {
 
-    public static void main(String[] args) {
-
-        Integer[][] matrix = {{1, 2}, {3, 4}};
-        List<Integer> list = Arrays.stream(matrix).flatMap(e -> Stream.of(e)).collect(Collectors.toList());
-        list.forEach(System.out::print);
+    public List<Integer> convert(Integer[][] matrix) {
+        List<Integer> list = Arrays.stream(matrix)
+                .flatMap(e -> Stream.of(e))
+                .collect(Collectors.toList());
+        return list;
     }
 }
