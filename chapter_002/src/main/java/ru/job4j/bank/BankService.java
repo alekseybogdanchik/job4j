@@ -21,12 +21,10 @@ public class BankService {
 
     public User findByPassport(String passport) {
         User rsl = null;
-        Optional<User> findByPass = users.keySet().stream().
+        rsl = users.keySet().stream().
                 filter(user -> user.getPassport().equals(passport)).
-                findFirst();
-        if (findByPass.isPresent()) {
-            rsl = findByPass.get();
-        }
+                findFirst().
+                orElse(null);
         return rsl;
     }
 
@@ -34,12 +32,10 @@ public class BankService {
         User user = findByPassport(passport);
         Account rsl = null;
         if (user != null) {
-            Optional<Account> find = users.get(user).stream().
+            rsl = users.get(user).stream().
                     filter(account -> account.getRequisite().equals(requisite)).
-                    findFirst();
-            if (find.isPresent()) {
-                rsl = find.get();
-            }
+                    findFirst().
+                    orElse(null);
         }
         return rsl;
     }
