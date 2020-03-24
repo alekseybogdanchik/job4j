@@ -27,7 +27,7 @@ public class SchoolTest {
         List<Integer> expected = Arrays.asList(100, 85, 70);
         List<Integer> result = new ArrayList<>();
         for (Student s : toAClass) {
-             result.add(s.getScore());
+            result.add(s.getScore());
         }
         assertThat(expected, is(result));
     }
@@ -39,7 +39,7 @@ public class SchoolTest {
         List<Integer> expected = Arrays.asList(55, 50, 69);
         List<Integer> result = new ArrayList<>();
         for (Student s : toBClass) {
-             result.add(s.getScore());
+            result.add(s.getScore());
         }
         assertThat(expected, is(result));
     }
@@ -51,7 +51,7 @@ public class SchoolTest {
         List<Integer> expected = Arrays.asList(25, 45, 1);
         List<Integer> result = new ArrayList<>();
         for (Student s : toCClass) {
-             result.add(s.getScore());
+            result.add(s.getScore());
         }
         assertThat(expected, is(result));
     }
@@ -66,6 +66,23 @@ public class SchoolTest {
         Map<String, Student> expected = new HashMap<>();
         expected.put(ivanov.getSurname(), ivanov);
         expected.put(petrov.getSurname(), petrov);
+        assertThat(expected, is(result));
+    }
+
+    @Test
+    public void levelOf49Then2() {
+        School school = new School();
+        Student ivanov = new Student("Ivanov", 100);
+        Student petrov = new Student("Petrov", 25);
+        Student sidorov = new Student("Sidorov", 50);
+        List<Student> list = new ArrayList<>();
+        list.add(ivanov);
+        list.add(null);
+        list.add(petrov);
+        list.add(null);
+        list.add(sidorov);
+        List<Student> result = school.levelOf(list, 49);
+        List<Student> expected = List.of(ivanov, sidorov);
         assertThat(expected, is(result));
     }
 }
