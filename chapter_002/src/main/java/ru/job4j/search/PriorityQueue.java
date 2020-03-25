@@ -6,11 +6,11 @@ public class PriorityQueue {
     private LinkedList<Task> tasks = new LinkedList<>();
 
     public void put(Task task) {
-        int index = 0;
+        var index = 0;
         if (tasks.isEmpty()) {
             this.tasks.add(index, task);
         } else {
-            for (Task element : tasks) {
+            for (var element : tasks) {
                 if (element.getPriority() < task.getPriority()) {
                     index++;
                 } else {
