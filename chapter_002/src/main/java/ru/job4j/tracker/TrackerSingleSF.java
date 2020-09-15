@@ -1,6 +1,6 @@
 package ru.job4j.tracker;
 
-public class TrackerSingleSF extends Tracker {
+public class TrackerSingleSF extends MemTracker {
 
     private static TrackerSingleSF instance;
 

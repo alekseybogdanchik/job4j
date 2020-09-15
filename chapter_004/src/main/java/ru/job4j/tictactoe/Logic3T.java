@@ -1,6 +1,8 @@
 package ru.job4j.tictactoe;
 
+import java.util.Arrays;
 import java.util.function.Predicate;
+import java.util.stream.Stream;
 
 public class Logic3T {
     private final Figure3T[][] table;
@@ -46,6 +48,10 @@ public class Logic3T {
     }
 
     public boolean hasGap() {
+        return true;
+
+
+/*
         boolean result = false;
         int count = 0;
         int size = table.length * table[0].length;
@@ -66,5 +72,6 @@ public class Logic3T {
             result = false;
         }
         return result;
+*/
     }
 }

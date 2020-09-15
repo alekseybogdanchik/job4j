@@ -7,7 +7,7 @@ public class EditItemAction implements UserAction {
     }
 
     @Override
-    public boolean execute(Input input, Tracker tracker) {
+    public boolean execute(Input input, Store tracker) {
         System.out.println(name());
         String id = input.askStr("Enter ID of replaced item: ");
         String name = input.askStr("Enter a new name: ");

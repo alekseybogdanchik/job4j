@@ -9,10 +9,10 @@ public class FindByNameAction implements UserAction {
     }
 
     @Override
-    public boolean execute(Input input, Tracker tracker) {
+    public boolean execute(Input input, Store tracker) {
         System.out.println(name());
         String name = input.askStr("Enter name of the item: ");
-        ArrayList<Item> nameItems = new ArrayList<Item>(tracker.findByName(name));
+        ArrayList<Item> nameItems = new ArrayList<>(tracker.findByName(name));
         if (nameItems.size() > 0) {
             for (Item i
                     : nameItems) {

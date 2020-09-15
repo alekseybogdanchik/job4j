@@ -4,11 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Tracker {
+public class MemTracker implements Store {
 
     //private final Item[] items = new Item[100];
     //private int position = 0;
-    private final List<Item> items = new ArrayList<Item>();
+    private final List<Item> items = new ArrayList<>();
+
+    @Override
+    public void init() {
+        System.out.println("for implements only");
+    }
 
     public Item add(Item item) {
         item.setId(this.generatedId());
@@ -61,12 +66,17 @@ public class Tracker {
     }
 
     public ArrayList<Item> findByName(String key) {
-        ArrayList<Item> nameItems = new ArrayList<Item>();
+        ArrayList<Item> nameItems = new ArrayList<>();
             for (Item i : items) {
                 if (i.getName().equals(key)) {
                     nameItems.add(i);
                     }
                 }
         return nameItems;
+    }
+
+    @Override
+    public void close() throws Exception {
+        System.out.println("for implements only");
     }
 }

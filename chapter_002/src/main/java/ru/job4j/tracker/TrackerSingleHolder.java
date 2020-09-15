@@ -1,6 +1,6 @@
 package ru.job4j.tracker;
 
-public class TrackerSingleHolder extends Tracker {
+public class TrackerSingleHolder extends MemTracker {
 
     private TrackerSingleHolder() {
     }

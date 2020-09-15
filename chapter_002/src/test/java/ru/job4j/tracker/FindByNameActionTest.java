@@ -15,7 +15,7 @@ public class FindByNameActionTest {
         ByteArrayOutputStream byteOut = new ByteArrayOutputStream();
         PrintStream stdOut = System.out;
         System.setOut(new PrintStream(byteOut));
-        Tracker tracker = new Tracker();
+        Store tracker = new MemTracker();
         Item item = new Item("test");
         tracker.add(item);
         FindByNameAction act = new FindByNameAction();

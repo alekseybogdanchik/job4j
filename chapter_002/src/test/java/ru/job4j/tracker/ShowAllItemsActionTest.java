@@ -15,7 +15,7 @@ public class ShowAllItemsActionTest {
         ByteArrayOutputStream byteOut = new ByteArrayOutputStream();
         PrintStream stdOut = System.out;
         System.setOut(new PrintStream(byteOut));
-        Tracker tracker = new Tracker();
+        Store tracker = new MemTracker();
         Item item = new Item("fix bug");
         tracker.add(item);
         ShowAllItemsAction act = new ShowAllItemsAction();
