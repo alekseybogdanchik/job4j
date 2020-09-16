@@ -48,15 +48,10 @@ public class Logic3T {
     }
 
     public boolean hasGap() {
-        return true;
-
-
-/*
         boolean result = false;
         int count = 0;
         int size = table.length * table[0].length;
         Figure3T cell;
-
         for (int row = 0; row < table.length; row++) {
             for (int col = 0; col < table.length; col++) {
                 cell = this.table[row][col];
@@ -72,6 +67,5 @@ public class Logic3T {
             result = false;
         }
         return result;
-*/
     }
 }
