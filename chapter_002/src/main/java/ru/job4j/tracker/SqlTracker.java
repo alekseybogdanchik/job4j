@@ -9,6 +9,13 @@ import java.util.Properties;
 public class SqlTracker implements Store {
     private Connection cn;
 
+    public SqlTracker(Connection cn) {
+        this.cn = cn;
+    }
+
+    public SqlTracker() {
+    }
+
     @Override
     public void init() {
         try (InputStream in = SqlTracker.class.getClassLoader().getResourceAsStream("app.properties")) {
@@ -34,7 +41,6 @@ public class SqlTracker implements Store {
             if (generatedKeys.next()) {
                 String strId = Integer.toString(generatedKeys.getInt(1));
                 item.setId(strId);
-                System.out.println(strId);
             }
         } catch (SQLException eSQL) {
             eSQL.printStackTrace();
