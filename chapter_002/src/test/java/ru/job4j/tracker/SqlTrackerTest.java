@@ -39,7 +39,7 @@ public class SqlTrackerTest {
     }
 
    @Test
-    public void WhenReplaceItem() throws Exception {
+    public void whenReplaceItem() throws Exception {
         try (SqlTracker tracker = new SqlTracker(ConnectionRollback.create(this.init()))) {
             String id = tracker.add(new Item("name")).getId();
             tracker.replace(id, (new Item("replaced")));
@@ -48,7 +48,7 @@ public class SqlTrackerTest {
         }
     }
    @Test
-    public void WhenAddTwoAndDeleteOneItemsThenDBHasOne() throws Exception {
+    public void whenAddTwoAndDeleteOneItemsThenDBHasOne() throws Exception {
         try (SqlTracker tracker = new SqlTracker(ConnectionRollback.create(this.init()))) {
             List<Item> rsl = tracker.findAll();
             assertThat(rsl.size(), is(0));
@@ -62,7 +62,7 @@ public class SqlTrackerTest {
         }
     }
    @Test
-    public void WhenAddTwoThenDBFindByIdTwoDifferentItems() throws Exception {
+    public void whenAddTwoThenDBFindByIdTwoDifferentItems() throws Exception {
         try (SqlTracker tracker = new SqlTracker(ConnectionRollback.create(this.init()))) {
             String idFirst = tracker.add(new Item("first")).getId();
             String idSecond = tracker.add(new Item("second")).getId();
